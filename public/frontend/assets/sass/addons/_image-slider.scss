@@ -1,0 +1,105 @@
+/*-------------------------
+  # Image Slider
+-------------------------*/
+.ic-image-slider-wrapper{
+  position: relative;
+
+  @media #{$max767} {
+    .ic-image-slider-nav {
+      margin-top: 20px;
+      @include flexbox();
+      @include justify-content(center);
+    }
+  }
+
+  @media #{$max480} {
+    .ic-image-slider-nav {
+      display: none;
+    }
+  }
+
+  .ic-image-nav-left,
+  .ic-image-nav-right{
+    position: absolute;
+    top:50%;
+    left:1rem;
+    @include translateY(-50%);
+    border-radius: 100%;
+    border: 1px solid #FEECEC;
+    height: 5rem;
+    width:5rem;
+    line-height: 5rem;
+    text-align: center;
+    font-size: 2.2rem;
+    color: $p_color;
+    cursor: pointer;
+    z-index: 99;
+    @include transition();
+    &:hover{
+      background:$p_color;
+      border:1px solid $p_color;
+      color:#fff;
+    }
+    @media #{$max767} {
+      position: static;
+      top:0;
+      left:0;
+      @include translateY(0);
+      border-radius: 0;
+      height: 4rem;
+      width:4rem;
+      line-height: 4rem;
+      margin: 0 5px;
+    }
+  }
+  .ic-image-nav-right{
+    left:auto;
+    right:1rem;
+  }
+
+  .ic-image-slider-item {
+    position: relative;
+    .ic-slider-text {
+      font-size: 12rem;
+      text-align: center;
+      text-transform: uppercase;
+      color: $t_color;
+      position: absolute;
+      z-index: 1;
+      top: 5rem;
+      left: 0;
+      width: 100%;
+      opacity: .1;
+      font-weight: 900;
+      @media #{$max1650} {
+        font-size: 10rem;
+      }
+      @media #{$max1200} {
+        font-size: 9rem;
+      }
+      @media #{$max991} {
+        font-size: 8rem;
+        top: 4rem;
+      }
+      @media #{$max767} {
+        font-size: 5rem;
+        top: 3rem;
+      }
+      @media #{$max575} {
+        font-size: 3.2rem;
+        top: 2rem;
+      }
+    }
+  }
+}
+
+.owl-item.active{
+  .ic-image-slider-item{
+    img {
+      @include animate(fadeInRight, .5s, 1s);
+    }
+    .ic-slider-text {
+      @include animate(fadeInUp_opacity, 1s, 1s);
+    }
+  }
+}

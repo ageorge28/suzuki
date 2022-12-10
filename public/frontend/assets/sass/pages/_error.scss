@@ -1,0 +1,41 @@
+/*-------------------------
+  # 404
+-------------------------*/
+.ic-error-section{
+  padding: 29rem 0;
+  background-image: url(../images/error.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  @media #{$max991} {
+    padding: 14rem 0;
+  }
+  @media #{$max575} {
+    padding: 10rem 0;
+  }
+  @media #{$max767} {
+    img{
+      width: 25rem;
+    }
+  }
+  @media #{$max575} {
+    img{
+      width: 20rem;
+    }
+  }
+  h3{
+    font-size: 3.6rem;
+    line-height: 3.6rem;
+    margin-bottom: .5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color:$p_color;
+    margin-top: 1rem;
+  }
+  p{
+    font-size: 1.8rem;
+    font-weight:700;
+    line-height: 2.8rem;
+    margin-bottom: 3rem;
+  }
+}

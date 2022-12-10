@@ -1,0 +1,121 @@
+/*-------------------------------------
+Template Name: kiosk Bike
+Author: ThemeClan
+Description: eCommerce HTML Template
+Version: 1.0.0
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+-------------------------------------*/
+
+/*-------------------------------------
+  Table of Content
+---------------------------------------
+  # Normalize
+  # Checkbox
+  # Theme Default
+    * Background
+    * Space
+    * Button
+    * Social Icon
+    * Select Dropdown
+
+  # Header
+    * Header Top
+    * Header Account
+    * Header Bottom
+    * Header Minicart
+    * Mobile Menu
+
+  # Search
+  # Breadcrumb
+  # Preloader
+  # Animation
+  # Section Header
+  # Banner Slider
+    * Banner carousel dots
+    * Banner slider item
+    * Banner slider progress
+
+  # Overview
+    * Overview item
+    * Overview style two
+
+  # Product
+    * Product slider head
+    * Product item
+    * Success Modal
+    * Quickview Modal
+
+  # Image Slider
+  # Blog
+  # About
+  # Counter
+  # Video
+  # Testimonial
+  # Google Map
+  # Contact
+    * Contact information
+    * Contact item
+    * Contact Form
+
+  # Shop page
+    * Pagination
+    * Product Widget
+
+  # Wishlist
+  # Product single
+    * Product single top
+    * Product nav tab
+    * Product specification
+    * Product features
+    * Product video
+    * Product review
+
+  # Blog single
+    * Blog author
+    * Blog comment
+    * Blog comment form
+    * Blog sidebar
+    * Blog widget
+
+  # Cart
+  # Checkout
+  # 404
+  # Newsletter
+  # Footer
+    * Footer top
+    * Footer widget
+    * Footer bottom
+    * Footer style two
+
+  # scroll to top
+-------------------------------------*/
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap');
+
+@import 'global/variable';
+@import 'global/mixin';
+@import 'global/reset';
+@import 'global/global';
+@import 'global/header';
+@import 'global/preloader';
+@import 'global/animation';
+
+@import 'addons/section-header';
+@import 'addons/slider';
+@import 'addons/overview';
+@import 'addons/products';
+@import 'addons/image-slider';
+@import 'addons/blog';
+@import 'addons/about';
+@import 'addons/counter';
+@import 'addons/testimonial';
+@import 'addons/contact';
+
+@import 'pages/shop';
+@import 'pages/product-single';
+@import 'pages/blog-single';
+@import 'pages/cart';
+@import 'pages/checkout';
+@import 'pages/error';
+
+@import 'global/footer';

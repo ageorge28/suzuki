@@ -1,0 +1,245 @@
+/*-------------------------
+  # Banner Slider
+-------------------------*/
+.ic-slider-section{
+   overflow:hidden;
+   position: relative;
+   .owl-stage-outer{
+      padding:0;
+   }
+
+   /*------- * Banner carousel dots -------*/
+   .ic-carousel-custom-dots {
+      position: absolute;
+      top: 50%;
+      right: 10rem;
+      @include translateY(-50%);
+      z-index: 9;
+      @media #{$max1200} {
+         right: 6rem;
+      }
+      @media #{$max991} {
+         right: 4rem;
+      }
+      @media #{$max575} {
+         display: none;
+      }
+
+      .ic-owl-dot {
+         font-weight: 500;
+         height: 2rem;
+         margin-bottom: 2rem;
+         color: $p_color;
+         @include flexbox();
+         @include align-items(center);
+         cursor: pointer;
+         @media #{$max767} {
+            height: 1.5rem;
+            margin-bottom: 1.5rem;
+         }
+         .ic-dot-text{
+            opacity: 0;
+            visibility: hidden;
+            @include transition(all, .2s);
+            @media #{$max767} {
+               display: none;
+            }
+            .ic-slider-count {
+               margin-right: 2rem;
+               color: #959595;
+            }
+         }
+         .ic-owl-circle{
+            height:2rem;
+            width:2rem;
+            border-radius: 100%;
+            border:1px solid $p_color;
+            margin-left: 2rem;
+            @media #{$max767} {
+               height:1.5rem;
+               width:1.5rem;
+               margin-left: 0;
+            }
+         }
+         &.active{
+            .ic-dot-text{
+               opacity: 1;
+               visibility: visible;
+            }
+            .ic-owl-circle{
+               background: $p_color;
+            }
+         }
+         &:last-child{
+            margin-bottom: 0;
+         }
+      }
+   }
+}
+
+/*------- * Banner slider item -------*/
+.ic-banner-slider-item{
+   position:relative;
+   background-position: 70% center;
+   background-size: cover;
+   background-repeat: no-repeat;
+   padding: 180px 0;
+   @include flexbox();
+   @include align-items(center);
+   z-index: 1;
+   min-height: calc(100vh - 150px);
+
+   @media #{$max1650} {
+      padding: 60px 0;
+      min-height: calc(100vh - 128px);
+   }
+   @media #{$max1200} {
+      padding: 100px 0;
+   }
+   @media #{$max991} {
+      padding: 80px 0;
+   }
+   @media #{$max767} {
+      &::after{
+         content:"";
+         position: absolute;
+         top:0;
+         left:0;
+         height:100%;
+         width:100%;
+         background: #f8f8f8;
+         opacity: .7;
+         z-index: -1;
+      }
+   }
+   &.slider-item-1{
+      background-image: url("../images/banner/04.png");
+   }
+   &.slider-item-2{
+      background-image: url("../images/banner/03.png");
+   }
+   &.slider-item-3{
+      background-image: url("../images/banner/01.png");
+   }
+   .ic-banner-content {
+      @include flex(0 0 100%);
+
+      .ic-banner-short-title{
+         color: $p_color;
+         letter-spacing: 2px;
+         font-weight: 500;
+         text-transform: uppercase;
+         margin-bottom: 5px;
+         @media #{$max480} {
+            font-size: 18px;
+         }
+      }
+      .ic-banner-title{
+         font-size: 8rem;
+         line-height: 8rem;
+         color:$p_color;
+         letter-spacing: 2px;
+         text-transform: uppercase;
+         font-weight: 900;
+         @media #{$max1650} {
+            font-size: 7rem;
+            line-height: 7rem;
+         }
+         @media #{$max1200} {
+            font-size: 6rem;
+            line-height: 6rem;
+         }
+         @media #{$max991} {
+            font-size: 5rem;
+            line-height: 5rem;
+         }
+         @media #{$max767} {
+            font-size: 44px;
+            line-height: 50px;
+         }
+         @media #{$max480} {
+            font-size: 32px;
+            line-height: 42px;
+         }
+      }
+
+      @media #{$max767} {
+         p{
+            display: none;
+         }
+      }
+   }
+}
+.owl-item.active{
+   .ic-slider-animated-1{
+      h3 {
+         @include animate(fadeInLeft, .5s, 1s);
+      }
+      h1 {
+         @include animate(fadeInLeft, 1s, 1s);
+      }
+      p {
+         @include animate(fadeInLeft, 1.5s, 1s);
+      }
+      a {
+         @include animate(fadeInLeft, 2s, 1s);
+      }
+   }
+   .ic-slider-animated-2{
+      h3 {
+         @include animate(fadeInUp, .5s, 1s);
+      }
+      h1 {
+         @include animate(fadeInUp, 1s, 1s);
+      }
+      p {
+         @include animate(fadeInUp, 1.5s, 1s);
+      }
+      a {
+         @include animate(fadeInUp, 2s, 1s);
+      }
+   }
+   .ic-slider-animated-3{
+      h3 {
+         @include animate(fadeInDown, .5s, 1s);
+      }
+      h1 {
+         @include animate(fadeInDown, 1s, 1s);
+      }
+      p {
+         @include animate(fadeInDown, 1.5s, 1s);
+      }
+      a {
+         @include animate(fadeInDown, 2s, 1s);
+      }
+   }
+}
+
+/*------- * Banner slider progress -------*/
+.ic-banner-slider-progress {
+   width: 0;
+   max-width: 100%;
+   height: 2px;
+   background: $p_color;
+   position:relative;
+   &:after{
+      content:"";
+      position:absolute;
+      right:-1rem;
+      bottom: 0;
+      z-index:99;
+      height:5rem;
+      width:7.2rem;
+      background-image:url(../images/banner/mini-bike.png) ;
+      @media #{$max767} {
+         width:6rem;
+         height:4.2rem;
+         background-size: 6rem;
+      }
+   }
+}
+
+
+
+
+

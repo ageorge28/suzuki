@@ -1,0 +1,33 @@
+/*-------------------------
+  # Checkout
+-------------------------*/
+.ic-checkout{
+  .ic-checkout-form{
+    @media #{$max991} {
+      margin-bottom: 40px;
+    }
+    p{
+      margin-bottom: 40px;
+    }
+    input{
+      border-radius: 30px;
+      border:1px solid #ced4da;
+      padding: 0 35px;
+      min-height: 5rem;
+      position: relative;
+      margin-bottom: 30px;
+      @include placeholder-color(#495057);
+      &:focus{
+        border:1px solid $p_color;
+        @include placeholder-color($p_color);
+      }
+    }
+    .ic-select-dropdown{
+      width: 100%;
+      border:1px solid #ced4da;
+      color:#495057;
+      margin-bottom: 30px;
+      padding: 0 35px;
+    }
+  }
+}
